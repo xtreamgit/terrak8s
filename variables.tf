@@ -1,13 +1,13 @@
 variable "name" {
-  default = "example.com"
+  default = "devdatalab.com"
 }
 
 variable "region" {
-  default = "us-east-1"
+  default = "us-west-1"
 }
 
 variable "azs" {
-  default = ["us-east-1a", "us-east-1c", "us-east-1d"]
+  default = ["us-west-1a", "us-west-1b"]
   type    = "list"
 }
 
@@ -16,5 +16,5 @@ variable "env" {
 }
 
 variable "vpc_cidr" {
-  default = "10.20.0.0/16"
+  default = "172.20.0.0/16"
 }
