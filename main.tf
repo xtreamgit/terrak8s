@@ -4,7 +4,7 @@ module "vpc" {
   env      = "${var.env}"
   vpc_cidr = "${var.vpc_cidr}"
 
-  tags {
+  tags = {
     Infra             = "${var.name}"
     Environment       = "${var.env}"
     Terraformed       = "true"
@@ -21,7 +21,7 @@ module "subnet_pair" {
   internet_gateway_id = "${module.vpc.internet_gateway_id}"
   availability_zones  = "${var.azs}"
 
-  tags {
+  tags = {
     Infra             = "${var.name}"
     Environment       = "${var.env}"
     Terraformed       = "true"
@@ -33,7 +33,7 @@ resource "aws_route53_zone" "public" {
   name          = "${var.name}"
   force_destroy = true
 
-  tags {
+  tags = {
     Name        = "${var.name}-${var.env}-zone-public"
     Infra       = "${var.name}"
     Environment = "${var.env}"
@@ -50,7 +50,7 @@ resource "aws_s3_bucket" "state_store" {
     enabled = true
   }
 
-  tags {
+  tags = {
     Name        = "${var.name}-${var.env}-state-store"
     Infra       = "${var.name}"
     Environment = "${var.env}"
