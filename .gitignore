@@ -4,3 +4,8 @@
 gensubnets/gensubnets
 /data
 terraform.tfvars
+.idea/misc.xml
+.idea/modules.xml
+.idea/terrak8s.iml
+.idea/vcs.xml
+.idea/workspace.xml
